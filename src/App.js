@@ -2,27 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Link, BrowserRouter as Router, Route } from "react-router-dom";
 
+/*Подключение массива с базой статей из файла ArticlesIndex.js */
+import ArticlesIndex from './articles/Articles_index';
 
-const articles = [
-  {
-    rubric: `Рубрика`,
-    title: `Заголовок_1`,
-    undertitle: `Подзаголовок_1`,
-    lead: `Текст лида`,
-    text: `Сам текст`,
-    author: `Иванов`,
-    cover: `img`,
-  },
-  {
-    rubric: `Рубрика`,
-    title: `Заголовок_2`,
-    undertitle: `Подзаголовок_2`,
-    lead: `Текст лида`,
-    text: `Сам текст`,
-    author: `Петров`,
-    cover: `img`,
-  }
-];
+
+const articles = ArticlesIndex;
+
 
 const IndexPage = () => {
   return <h3>Home Page</h3>;
@@ -56,13 +41,11 @@ const ArticlePage = ({ match, location }) => {
 
   return (
     <div>
-      <p>
         <div>{articles[articleId - 1].rubric}</div>
         <div>{articles[articleId - 1].title}</div>
         <div>{articles[articleId - 1].lead}</div>
-        <div>{articles[articleId - 1].text}</div>
+        <div>{articles[articleId - 1].text()}</div>
         <div>{articles[articleId - 1].author}</div>
-      </p>
     </div>
   );
 };
