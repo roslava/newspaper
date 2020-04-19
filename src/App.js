@@ -7,11 +7,15 @@ import FeedbackPage from './pages/FeedbackPage'
 import ArticlesPage from './pages/ArticlesPage'
 import ArchivePage from './pages/ArchivePage'
 
+
 /*Подключение массива с базой статей из файла ArticlesIndex.js */
 import ArticlesIndex from './articles/Articles_index';
 
 /*Помещаем массив с базой статей в константу articles */
 const articles = ArticlesIndex;
+
+
+
 
 
 class App extends React.Component {
@@ -23,9 +27,9 @@ class App extends React.Component {
         <Router>
 
           <Navigation />
-        
 
-          <Route exact path="/articles" render = {()=> <ArticlesPage articles = {articles}/>} />
+
+          <Route exact path="/" render = {()=> <ArticlesPage articles = {articles}/>} />
           <Route exact path="/article/:articleId" component={ArticlePage} />
           <Route exact path="/feedback" component={FeedbackPage} />
 
