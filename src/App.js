@@ -23,8 +23,8 @@ class App extends React.Component {
         <Router>
 
           <Navigation />
-          {/*<Route exact path="/" component={Home} />*/}
-          <Route exact path="/"  render = {()=> <ArticlesPage articles = {articles}/>} />
+          <Route exact path="/" component={Home} />
+
           <Route exact path="/articles" render = {()=> <ArticlesPage articles = {articles}/>} />
           <Route exact path="/article/:articleId" component={ArticlePage} />
           <Route exact path="/feedback" component={FeedbackPage} />
