@@ -21,7 +21,7 @@ class App extends React.Component {
       <div>
         <Router>
           <Navigation />
-          <Route exact path="/archive" component={ArchivePage} />
+          
           <Route exact path="/" render = {()=> <ArticlesPage articles = {articles}/>} />
           <Route exact path="/article/:articleId" component={ArticlePage} />
           <Route exact path="/feedback" component={FeedbackPage} />

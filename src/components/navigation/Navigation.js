@@ -6,7 +6,7 @@ render(){
   return(
     <div>
     <Link to="/">Читайте в номере</Link>
-    <Link to="/archive">Другие номера газеты</Link>
+    <a target="_self" href="https://roslava.github.io/index/">Все номера</a>
     <Link to="/feedback">Обратная связь</Link>
     </div>
   )
