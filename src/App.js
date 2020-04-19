@@ -19,18 +19,32 @@ class App extends React.Component {
   render(){
     return(
       <div>
+
         <Router>
+
           <Navigation />
-          
-          <Route exact path="/" render = {()=> <ArticlesPage articles = {articles}/>} />
+          {/*<Route exact path="/" component={Home} />*/}
+          <Route exact path="/"  render = {()=> <ArticlesPage articles = {articles}/>} />
+          <Route exact path="/articles" render = {()=> <ArticlesPage articles = {articles}/>} />
           <Route exact path="/article/:articleId" component={ArticlePage} />
           <Route exact path="/feedback" component={FeedbackPage} />
-        </Router>
+
+      </Router>
+
       </div>
     );
   }
 }
 export default App
+
+
+
+function Home(){
+  return(
+    <h1>"Это такой-то номер"</h1>
+  )
+}
+
 
 
 
