@@ -1,11 +1,11 @@
 import React from "react";
-// import ReactDOM from "react-dom";
+import './styles/app.scss';
 import {BrowserRouter as Router, Route } from "react-router-dom";
 
 import Navigation from './components/navigation/Navigation'
+import Footer from './components/footer/Footer'
 import FeedbackPage from './pages/FeedbackPage'
 import ArticlesPage from './pages/ArticlesPage'
-import ArchivePage from './pages/ArchivePage'
 
 
 /*Подключение массива с базой статей из файла ArticlesIndex.js */
@@ -15,27 +15,31 @@ import ArticlesIndex from './articles/Articles_index';
 const articles = ArticlesIndex;
 
 
-
-
-
 class App extends React.Component {
 
   render(){
     return(
-      <div>
-
         <Router>
 
-          <Navigation />
+            <header>
+            </header>
+            <nav>
+              <Navigation />
+            </nav>
+            <main  className="app__main">
+              <div className="container">
+                <div className="row app__gallery">
 
+              <Route exact path="/" render = {()=> <ArticlesPage articles = {articles}/>} />
+              <Route exact path="/article/:articleId" component={ArticlePage} />
+              <Route exact path="/feedback" component={FeedbackPage} />
 
-          <Route exact path="/" render = {()=> <ArticlesPage articles = {articles}/>} />
-          <Route exact path="/article/:articleId" component={ArticlePage} />
-          <Route exact path="/feedback" component={FeedbackPage} />
-
+              </div>
+              </div>
+            </main>
+            <Footer />
+      
       </Router>
-
-      </div>
     );
   }
 }
@@ -43,11 +47,6 @@ export default App
 
 
 
-function Home(){
-  return(
-    <h1>"Это такой-то номер"</h1>
-  )
-}
 
 
 

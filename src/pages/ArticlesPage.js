@@ -1,16 +1,17 @@
+import '../styles/articles-page.scss';
 import React from 'react';
 import { Link } from "react-router-dom";
 
 function ArticlesPage(props){
   const articles = props.articles;
   return (
-    <div>
+    <div  className="articlePage articlesPage__gallery"  >
       {articles.map((article, index) => (
-        <div key={index}>
-          <div>{article.rubric}</div>
-          <div>{article.title}</div>
-          <div>{article.lead()}</div>
-          <Link to={`/article/${index + 1}`}>Читать полность</Link>
+        <div className="articlesPage__col-block" key={index}>
+          <div className="articlesPage__rubric">{article.rubric}</div>
+          <div className="articlesPage__title">{article.title}</div>
+          <div className="articlesPage__lead">{article.lead()}</div>
+          <Link className="articlesPage__link" to={`/article/${index + 1}`}>Читать полность</Link>
           <hr/>
         </div>
       ))}
